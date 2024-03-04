@@ -1,0 +1,100 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\Android.png" />
+    <None Remove="images\B736H6.jpg" />
+    <None Remove="images\D034T5.png" />
+    <None Remove="images\D735T5.jpg" />
+    <None Remove="images\E732R7.jpg" />
+    <None Remove="images\F573T5.jpg" />
+    <None Remove="images\F933T5.jpg" />
+    <None Remove="images\G387Y6.jpg" />
+    <None Remove="images\H023R8.jpg" />
+    <None Remove="images\H384H3.jpg" />
+    <None Remove="images\H937R3.jpg" />
+    <None Remove="images\icon.ico" />
+    <None Remove="images\K437E6.jpg" />
+    <None Remove="images\K478R4.jpg" />
+    <None Remove="images\kupit-katanu-2.jpg" />
+    <None Remove="images\logo.png" />
+    <None Remove="images\menu.png" />
+    <None Remove="images\P927R2.jpg" />
+    <None Remove="images\P936E4.jpg" />
+    <None Remove="images\picture.png" />
+    <None Remove="images\R836H6.jpg" />
+    <None Remove="images\S563T4.jpg" />
+    <None Remove="images\server.png" />
+    <None Remove="images\T793T4.jpg" />
+    <None Remove="images\V483R7.jpg" />
+    <None Remove="images\V783T5.jpg" />
+    <None Remove="images\А112Т4.jpg" />
+    <None Remove="images\Безымянный123321-PhotoRoom.png-PhotoRoom.png" />
+    <None Remove="images\ыыыы.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\Android.png" />
+    <Resource Include="images\B736H6.jpg" />
+    <Resource Include="images\D034T5.png" />
+    <Resource Include="images\D735T5.jpg" />
+    <Resource Include="images\E732R7.jpg" />
+    <Resource Include="images\F573T5.jpg" />
+    <Resource Include="images\F933T5.jpg" />
+    <Resource Include="images\G387Y6.jpg" />
+    <Resource Include="images\H023R8.jpg" />
+    <Resource Include="images\H384H3.jpg" />
+    <Resource Include="images\H937R3.jpg" />
+    <Resource Include="images\icon.ico" />
+    <Resource Include="images\K437E6.jpg" />
+    <Resource Include="images\K478R4.jpg" />
+    <Resource Include="images\kupit-katanu-2.jpg" />
+    <Resource Include="images\logo.png" />
+    <Resource Include="images\menu.png" />
+    <Resource Include="images\P927R2.jpg" />
+    <Resource Include="images\P936E4.jpg" />
+    <Resource Include="images\picture.png" />
+    <Resource Include="images\R836H6.jpg" />
+    <Resource Include="images\S563T4.jpg" />
+    <Resource Include="images\server.png" />
+    <Resource Include="images\T793T4.jpg" />
+    <Resource Include="images\V483R7.jpg" />
+    <Resource Include="images\V783T5.jpg" />
+    <Resource Include="images\А112Т4.jpg" />
+    <Resource Include="images\Безымянный123321-PhotoRoom.png-PhotoRoom.png" />
+    <Resource Include="images\ыыыы.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
