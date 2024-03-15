@@ -327,6 +327,7 @@ namespace testWPF
                 SqlDataReader reader = command.ExecuteReader();
             }
 
+
             foreach ( Product prod in cart_products)
             {
                 

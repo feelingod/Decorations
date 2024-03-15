@@ -34,13 +34,14 @@ namespace testWPF
         public MainWindow()
         {
             InitializeComponent();
-
+            
             timer.Tick += new EventHandler(timer_Tick);
-            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Interval = new TimeSpan(0, 0, 1); /// Тики таймера будут происходить раз в секунду
         }
 
         private void timer_Tick(object? sender, EventArgs e)
         {
+            /// Пока тикает таймер, он виден
             if (seconds != 10)
             {
                 tbTimer.Visibility = Visibility.Visible;
@@ -48,7 +49,8 @@ namespace testWPF
                 seconds++;
             }
             else
-            {
+            {  
+                /// Когда таймер остановился, кнопка "Войти" снова доступна
                 timer.Stop();
                 butonLogin.IsEnabled = true;
                 tbTimer.Visibility = Visibility.Collapsed;
@@ -104,6 +106,7 @@ namespace testWPF
                     }
                     else
                     {
+                        /// Запуск капчи и блокировка кнопки "Войти" на 10 секунд
                         MessageBox.Show("Неверно введены данные");
                         ShowCapthca();
                         FillCaptcha();
@@ -117,24 +120,28 @@ namespace testWPF
 
         private void FillCaptcha()
         {
+            // Пересоздание картинки CAPTCHA и очищение поля для её ввода
             tbCaptchaCheck.Text = "";
             captchaImage.Source = ConvertBitmapToImageSource(CreateImage(150, 50));
         }
 
         private void ShowCapthca()
         {
+            /// Отображается капча
             captcha = true;
             captchaPanel.Visibility = Visibility.Visible;
             mainPanel.Margin = new Thickness(70, 20, 70, 20);
         }
         private void UserNextForm()
         {
+            /// Переход на следующую форму
             ProductWindow productWindow = new ProductWindow(userData);
             this.Close();
             productWindow.Show();
         }
         private ImageSource ConvertBitmapToImageSource(Bitmap bitmap)
         {
+            /// Конвертирование созданной капчи из Bitmap в картинку,воспринимаемую для ImageSource
             using (MemoryStream memory = new MemoryStream())
             {
                 bitmap.Save(memory, ImageFormat.Png);
@@ -221,17 +228,15 @@ namespace testWPF
 
         private void StPanMain_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            try
-            {
-
+            // Перетаскивание окна
+            if (e.ChangedButton == MouseButton.Left)
                 DragMove();
-            }
-            catch { }
         }
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
             FillCaptcha();
         }
+
     }
 }

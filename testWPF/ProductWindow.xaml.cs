@@ -362,29 +362,37 @@ namespace testWPF
         /// Заполнение страницы в зависимости от количества товаров
         private void SetPanelsByProductCount()
         {
-            /// Проверка на кратность трём нужна для того, чтобы поместить оставшиеся товары на последнюю страницу правильно
-            if (current_page == all_pages)
+            try
             {
+                /// Проверка на кратность трём нужна для того, чтобы поместить оставшиеся товары на последнюю страницу правильно
+                if (current_page == all_pages)
+                {
 
-                /// Один товар на странице
-                if (products.Count() % 3 == 1)
-                {
-                    FillProductPanels(current_page, products[x]);
-                }
+                    /// Один товар на странице
+                    if (products.Count() % 3 == 1)
+                    {
+                        FillProductPanels(current_page, products[x]);
+                    }
 
-                /// Два товара на странице
-                else if (products.Count() % 3 == 2)
-                {
-                    FillProductPanels(current_page, products[x], products[x + 1]);
+                    /// Два товара на странице
+                    else if (products.Count() % 3 == 2)
+                    {
+                        FillProductPanels(current_page, products[x], products[x + 1]);
+                    }
+                    else
+                    {
+                        FillProductPanels(current_page, products[x], products[x + 1], products[x + 2]);
+                    }
+                    return;
                 }
-                else
-                {
+                else ///Если страница не последняя, то в любом случае в ней будет 3 товара
                     FillProductPanels(current_page, products[x], products[x + 1], products[x + 2]);
-                }
-                return;
             }
-            else ///Если страница не последняя, то в любом случае в ней будет 3 товара
-                FillProductPanels(current_page, products[x], products[x + 1], products[x + 2]);
+            catch
+            {
+                MessageBox.Show("Невозможно выполнить данное действие");
+            }
+           
         }
 
 
@@ -488,6 +496,7 @@ namespace testWPF
                 FillProductPanels(1, products[0]);
             else
                 ClearPanel();
+            x = 0;
             AllPagesCount();
             SetPageCountTB();
             SetProductsCountTB();
